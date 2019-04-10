@@ -1,12 +1,21 @@
 <template>
-  <div class="layout-login">
+  <div
+    class="layout-login"
+    :style="{backgroundImage: 'url(' + $store.state.meta.loginBgImg + ')'}"
+  >
     <div class="login-form">
       <h1 class="title">
-        {{ $store.state.meta.appName }}
+        <img
+          v-if="$store.state.meta.loginLogo"
+          class="logo-login"
+          :src="$store.state.meta.loginLogo"
+          alt=""
+        />
+        <span v-else>{{ $store.state.meta.appName }}</span>
       </h1>
       <nuxt></nuxt>
     </div>
-    <div class="buttom-wrapper font-s text-center ">
+    <div class="buttom-wrapper">
       <copyright></copyright>
     </div>
   </div>
@@ -34,7 +43,7 @@ export default {
   width: 100%;
   min-height: 100%;
   background-color: #f0f2f5;
-  background-image: url(https://deepexi.oss-cn-shenzhen.aliyuncs.com/xpaas-console/bg_login.png);
+  background-image: url(https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
