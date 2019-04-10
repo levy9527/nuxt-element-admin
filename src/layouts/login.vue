@@ -66,7 +66,7 @@ export default {
   .buttom-wrapper {
     width: 100%;
     position: absolute;
-    bottom: 19px;
+    bottom: 41px;
 
     .buttom-link {
       height: 17px;
