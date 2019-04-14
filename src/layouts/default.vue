@@ -14,10 +14,19 @@
           <h1 class="logo-text">{{ $store.state.meta.appName }}</h1>
         </nuxt-link>
       </div>
-      <menu-item :menuList="menuList"></menu-item>
+      <menu-item :menuList="menuList" class="menu-container"></menu-item>
+      <div class="fix-btn-wrap">
+        <div class="collapse-btn" @click="collapse = !collapse">
+          <img
+            class="btn-img"
+            src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-services/sidebar/expand.svg"
+            alt=""
+          />
+        </div>
+      </div>
     </el-menu>
 
-    <el-container>
+    <el-container class="main-container">
       <el-header>
         <el-row type="flex" justify="space-between" align="middle">
           <el-col>
@@ -76,11 +85,13 @@ export default {
 </script>
 
 <style lang="less">
-@menu-bg: #001529;
+@menu-bg: #2d303b;
 @submenu-bg: #000c17;
 @primary-color: #1890ff;
 // antd menu 高度
 @menu-height: 40px;
+@sidebar-max-width: 200px;
+@sidebar-min-width: 64px;
 
 #__nuxt {
   .el-icon-sort {
@@ -113,9 +124,13 @@ export default {
     }
   }
 
+  .main-container {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
   // 子菜单
   .el-menu--vertical {
-    .el-menu-item,
     .el-submenu__title {
       height: @menu-height;
       line-height: @menu-height;
@@ -127,7 +142,7 @@ export default {
   }
 
   .aside-menu {
-    min-height: 100vh;
+    height: 100vh;
     border-right: none;
     font-weight: 300;
     background: @menu-bg;
@@ -148,34 +163,84 @@ export default {
       &.is-active {
         margin-bottom: 8px;
       }
+
+      .el-menu-item {
+        height: @menu-height;
+        line-height: @menu-height;
+        margin: 8px 0;
+
+        > span {
+          position: relative;
+
+          &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: -12px;
+            transform: translateY(-50%);
+            bottom: 0;
+            width: 5px;
+            height: 5px;
+            background: rgba(171, 172, 176, 1);
+            border-radius: 1px;
+          }
+        }
+
+        &.is-active {
+          margin-bottom: 8px;
+
+          > span {
+            &::before {
+              width: 5px;
+              height: 16px;
+              background-color: @primary-color;
+              border-radius: 15px;
+            }
+          }
+        }
+      }
     }
 
-    .el-menu-item {
-      height: @menu-height;
-      line-height: @menu-height;
-      margin: 8px 0;
+    .menu-container {
+      height: calc(100vh - 60px - 50px);
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
 
-      &:hover {
-        color: #fff !important;
+    .fix-btn-wrap {
+      height: 50px;
 
-        /* background: menu-bg; */
+      .collapse-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: @sidebar-max-width;
+        background: #343744;
+        cursor: pointer;
       }
 
-      &.is-active {
-        color: #fff;
-        background: @primary-color !important;
+      .btn-img {
+        transform: rotate(180deg);
       }
     }
   }
 
   // 未折叠
   .aside-menu:not(.el-menu--collapse) {
-    min-width: 256px;
-    max-width: $min-width;
+    min-width: @sidebar-max-width;
+    max-width: @sidebar-max-width;
 
     [class*='icon'] {
       font-size: 14px;
       margin-right: 5px;
+    }
+
+    .fix-btn-wrap {
+      .collapse-btn {
+        width: @sidebar-max-width;
+      }
     }
   }
 
@@ -210,6 +275,17 @@ export default {
       [class*='icon'] {
         font-size: 16px;
         margin: 0;
+      }
+    }
+
+    .fix-btn-wrap {
+      .collapse-btn {
+        width: @sidebar-min-width;
+      }
+
+      .btn-img {
+        transform: rotate(0);
+        transition-delay: 3s;
       }
     }
   }
