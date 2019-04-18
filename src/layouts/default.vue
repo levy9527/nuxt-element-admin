@@ -31,7 +31,7 @@
                 {{ $store.state.user.nickname }}
                 <i class="el-icon-arrow-down el-icon--right"></i>
               </span>
-              <el-dropdown-menu slot="dropdown">
+              <el-dropdown-menu v-slot="dropdown">
                 <el-dropdown-item command="logout">退出</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
@@ -171,7 +171,7 @@ export default {
   // 未折叠
   .aside-menu:not(.el-menu--collapse) {
     min-width: 256px;
-    max-width: $min-width;
+    max-width: 256px;
 
     [class*='icon'] {
       font-size: 14px;

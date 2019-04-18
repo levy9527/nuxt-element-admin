@@ -3,11 +3,13 @@
     <div v-for="m in menuList" :key="m.id" class="menu-item">
       <el-menu-item :index="m.url" v-if="!m.children">
         <icon-font :icon="m.icon"></icon-font>
-        <span slot="title">{{ m.name }}</span>
+        <template v-slot="title">
+          <span>{{ m.name }}</span>
+        </template>
       </el-menu-item>
 
       <el-submenu v-else :index="m.id + ''">
-        <template slot="title">
+        <template v-slot="title">
           <!--<i class="el-icon-menu"></i>-->
           <icon-font :icon="m.icon"></icon-font>
           <span class="sub-menu-title">{{ m.name }}</span>

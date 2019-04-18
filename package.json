@@ -36,7 +36,7 @@
     "js-cookie": "^2.2.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
-    "nuxt": "^2.3.2"
+    "nuxt": "^2.6.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
