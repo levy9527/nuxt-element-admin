@@ -13,7 +13,9 @@ export const state = () => ({
 
   user: {},
   menuList: [],
-  permission: {}
+  permission: {},
+
+  collapse: false // 是否收缩侧边栏
 })
 
 //  mutation 必须同步执行
@@ -34,6 +36,8 @@ export const mutations = {
         path: cookiePath
       })
     })
+    state.mainHeadTitle = ''
+    this.$router.replace('/login')
   },
   update(state, payload) {
     Object.keys(payload).forEach(k => {
@@ -68,7 +72,7 @@ export const actions = {
     commit('update', {user: user.payload || {}})
 
     let menuResources = await this.$axios.$get(
-      `/deepexi-permission/api/v1/apps/service/userResource`
+      `/deepexi-permission/api/v2/apps/service/userResource`
     )
     if (menuResources && menuResources.payload) {
       commit('update', {

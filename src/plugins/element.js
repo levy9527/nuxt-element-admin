@@ -32,7 +32,11 @@ import {
   DropdownMenu,
   DropdownItem,
   Row,
-  Col
+  Col,
+  Scrollbar,
+  Breadcrumb,
+  BreadcrumbItem,
+  Badge
 } from 'element-ui'
 import ElFormRenderer from '@femessage/el-form-renderer'
 import ElDataTable from 'el-data-table'
@@ -70,7 +74,10 @@ Vue.use(Dialog)
 Vue.use(Tooltip)
 // Vue.use(Cascader)
 // Vue.use(Autocomplete)
-
+Vue.use(Scrollbar)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Badge)
 // steps
 // Vue.use(Steps)
 // Vue.use(Step)
