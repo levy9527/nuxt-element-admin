@@ -155,8 +155,6 @@ export default {
 
     .el-menu-item {
       &.is-active {
-        margin-bottom: 8px;
-
         .item-title {
           &::before {
             width: 5px;
