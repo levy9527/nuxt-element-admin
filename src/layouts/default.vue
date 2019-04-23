@@ -171,7 +171,7 @@ export default {
   // 未折叠
   .aside-menu:not(.el-menu--collapse) {
     min-width: 256px;
-    max-width: 256px;
+    max-width: $min-width;
 
     [class*='icon'] {
       font-size: 14px;
