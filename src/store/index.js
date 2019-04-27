@@ -36,7 +36,6 @@ export const mutations = {
         path: cookiePath
       })
     })
-    state.mainHeadTitle = ''
     this.$router.replace('/login')
   },
   update(state, payload) {
