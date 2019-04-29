@@ -117,6 +117,12 @@ export default {
     transform: rotate(-90deg);
   }
 
+  // dropdown
+  .el-dropdown-link {
+    cursor: pointer;
+    color: #409eff;
+  }
+
   .header-wrap {
     height: 60px;
     padding: 0 24px;
@@ -187,12 +193,6 @@ export default {
     margin: 10px 20px 0;
     padding: 10px;
     background: #fff;
-  }
-
-  // dropdown
-  .el-dropdown-link {
-    cursor: pointer;
-    color: #409eff;
   }
 
   .el-icon-arrow-down {
@@ -294,7 +294,7 @@ export default {
             &::before {
               width: 5px;
               height: 16px;
-              background-color: #1890ff;
+              background-color: #5d81f9;
               border-radius: 15px;
             }
           }
