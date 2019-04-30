@@ -13,9 +13,7 @@ export const state = () => ({
 
   user: {},
   menuList: [],
-  permission: {},
-
-  collapse: false // 是否收缩侧边栏
+  permission: {}
 })
 
 //  mutation 必须同步执行
