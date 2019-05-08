@@ -84,7 +84,9 @@ export const actions = {
 
   // 配置的元信息
   async fetchMetaInfo({commit}) {
-    let resp = await this.$axios.$get('/deepexi-permission/api/v1/configs')
+    let resp = await this.$axios.$get(
+      'http://39.98.50.163:3000/mock/691/xpaas-enterprise-contact/security/api/v1/configs'
+    )
     let meta = {}
     resp.payload.forEach(item => {
       meta[item.key] = item.value
