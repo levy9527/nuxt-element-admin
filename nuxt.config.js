@@ -44,7 +44,7 @@ module.exports = {
   },
   proxy: config.env[env.MODE],
   router: {
-    middleware: ['meta'],
+    middleware: ['meta', 'router'],
     mode: 'hash'
   },
   /*

@@ -1,3 +1,11 @@
+/*
+ * @Author: Han
+ * @Date: 2019-05-08 15:13:59
+ * @Last Modified by:   Han
+ * @Last Modified time: 2019-05-08 15:13:59
+ * @Description 请求拦截，适配restEasy后端API服务框架
+ */
+
 import Vue from 'vue'
 
 export default function({$axios, store, app, redirect}) {
@@ -21,7 +29,9 @@ export default function({$axios, store, app, redirect}) {
   $axios.onResponse(resp => {
     const {data} = resp
     const code = parseInt(data.code)
-    if (code !== 0) {
+
+    // 如果code存在且不等于0，则将响应到error中
+    if (code !== 0 && !Number.isNaN(code)) {
       // 如果httpStatusCode = 200, 但是操作失败的请求，将响应转为error
       // 兼容error的数据结构
       return Promise.reject({response: resp})
@@ -32,7 +42,6 @@ export default function({$axios, store, app, redirect}) {
   })
 
   $axios.onError(error => {
-    console.log(error)
     if (process.client) {
       // axios 数据结构
       let resp = error.response
