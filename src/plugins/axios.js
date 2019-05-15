@@ -1,9 +1,19 @@
 /*
  * @Author: Han
  * @Date: 2019-05-08 15:13:59
- * @Last Modified by:   Han
- * @Last Modified time: 2019-05-08 15:13:59
- * @Description 请求拦截，适配restEasy后端API服务框架
+ * @Last Modified by: Han
+ * @Last Modified time: 2019-05-15 15:51:46
+ * @Description 请求拦截，适配 restEasy 后端API服务框架，若数据格式不符合下面的数据格式，则会按照 httpStatusCode 正常触发对应的事件。
+ * @Example
+ * 适配api返回格式：
+ * {
+ *   code: Number, // 业务状态码 0: 操作成功;
+ *   msg: String,  // 业务操作信息 当 code === 0 时为 "ok"; code !== 0 时为具体的失败信息
+ *   payload: Any, // 接口返回数据
+ * }
+ *
+ * 当 code !== 0 同时 httpStatusCode === 200 时，请求会被拦截到 xhr.onerror 事件，即此时的请求操作会被 Promise.catch 捕获。
+ * 其余情况都和普通请求行为一致
  */
 
 import Vue from 'vue'

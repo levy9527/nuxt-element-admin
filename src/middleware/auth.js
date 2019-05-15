@@ -2,8 +2,12 @@
  * @Author: Han
  * @Date: 2019-05-08 14:32:04
  * @Last Modified by: Han
- * @Last Modified time: 2019-05-08 17:38:06
+ * @Last Modified time: 2019-05-15 16:30:31
  * @Description 路由鉴权中间件，实现其他路由守卫功能请新建一个中间件
+ *
+ * **********************************************************
+ * * @Strong 这是一个路由中间件，请不要在 serverMiddleware 中使用 *
+ * **********************************************************
  */
 
 import cookie from 'js-cookie'
@@ -14,6 +18,8 @@ const LOGIN_PATH = '/login'
 const whiteList = [LOGIN_PATH]
 
 export default async ({store, redirect, env, route}) => {
+  if (process.server) return
+
   const {NO_LOGIN} = env
   const {path} = route
 
