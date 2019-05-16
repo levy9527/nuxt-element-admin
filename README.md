@@ -57,33 +57,33 @@ yarn generate
 ├── README.md
 ├── doc
 │   └── dev.md
-├── nuxt.config.js         框架配置
+├── nuxt.config.js         框架配置文件
 ├── package.json
 ├── src                    开发目录
-│   ├── assets
+│   ├── assets             资源，包括样式文件与图片
 │   │   ├── global.less    全局样式类
 │   │   └── var.less       样式变量，支持less变量自动引入，即不用在less中import就能直接使用变量
-│   ├── components         业务无关的通用vue组件
-│   ├── const              常量存放文件夹
-│   │   ├── api.js         接口地址
+│   ├── components         业务无关的可复用的组件
+│   ├── const              常量文件
+│   │   ├── api.js         定义api路径
+│   │   ├── path.js        定义页面跳转路径
 │   │   └── cookie-keys.js cookie key管理
 │   ├── container          业务有关的vue组件
-│   ├── layouts            页面布局
+│   ├── layouts            可复用的页面布局
 │   │   ├── default.vue
 │   │   └── login.vue
-│   ├── middleware         
-│   │   ├── auth.js        路由鉴权中间件
-│   │   └── meta.js        动态获取项目基本信息
-│   ├── mixins             组件mixins文件
-│   ├── pages              页面文件，根据文件名动态生成路由
+│   ├── middleware         自定义函数，会在每个页面渲染前执行
+│   │   └── auth.js        路由鉴权中间件
+│   ├── mixins             可复用的“织入”页面的代码片断
+│   ├── pages              应用视图 & 路由名称，每个文件都对应一个路由视图，开发者框无需手动维护路由文件
 │   │   ├── index.vue
 │   │   └── login.vue
-│   ├── plugins
+│   ├── plugins            应用插件，在Vue.js 初始化前运行，可在这里引入第三方类库
 │   │   ├── axios.js       请求拦截
 │   │   └── element.js     引入element-ui
-│   └── store              状态管理
+│   └── store              Vuex状态管理文件
 │       └── index.js
-├── static
+├── static                 静态资源
 │   ├── README.md
 │   └── favicon.ico
 └── yarn.lock
