@@ -1,7 +1,7 @@
 /**
  * Created by levy on 2018/7/10.
  */
-import META from '@/const/meta.config.js'
+import META from '@/const/meta.js'
 
 export default function({store, app}) {
   // if (process.server) return

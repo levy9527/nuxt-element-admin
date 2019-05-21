@@ -6,15 +6,15 @@ const meta = {
   htmlTitle: 'Deepexi-services',
 
   // 登录表单上的图片
-  loginLogo:
+  logoLogin:
     'https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-services/logo_%E8%93%9D%E8%89%B2%E5%AD%97%E4%BD%93.svg',
 
   // 侧边栏logo 没有文字
-  logo:
+  logoSidebar:
     'https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-services/logo.svg',
 
   // 侧边栏logo 有文字
-  logoWord:
+  logoSidebarWithWord:
     'https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-services/logo_font.svg',
 
   // 应用名称
