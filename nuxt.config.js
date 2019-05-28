@@ -122,11 +122,11 @@ module.exports = {
    * @Link https://github.com/nuxt-community/style-resources-module/
    */
   styleResources: {
-    less: '~assets/var.less'
+    less: '~styles/var.less'
   },
   css: [
     {
-      src: '~assets/global.less',
+      src: '~styles/global.less',
       lang: 'less'
     }
   ],

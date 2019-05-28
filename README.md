@@ -60,7 +60,7 @@ yarn generate
 ├── nuxt.config.js         框架配置文件
 ├── package.json
 ├── src                    开发目录
-│   ├── assets             资源，包括样式文件与图片
+│   ├── styles             未编译的样式资源
 │   │   ├── global.less    全局样式类
 │   │   └── var.less       样式变量，支持less变量自动引入，即不用在less中import就能直接使用变量
 │   ├── components         业务无关的可复用的组件
