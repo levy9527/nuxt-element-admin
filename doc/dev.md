@@ -114,12 +114,13 @@ table 里空值就显示空白, 不需要显示占位符 `-`
 
 ### 统一 footer 样式 .data-table-footer
 
-已写在 /assets/global.styl 可直接使用
+已写在 /styles/global.less 可直接使用
 
-```stylus
-.data-table-footer
+```less
+.data-table-footer {
   margin-top 24px
   text-align right
+}
 ```
 
 ## form 表单

@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.4.1](https://github.com/levy9527/nuxt-element-dashboard/compare/v2.4.0...v2.4.1) (2019-05-22)
+
+
+### Bug Fixes
+
+* 格式化出错误代码 ([385642e](https://github.com/levy9527/nuxt-element-dashboard/commit/385642e))
+
+
+
+## [2.4.0](https://github.com/levy9527/nuxt-element-dashboard/compare/v2.3.4...v2.4.0) (2019-05-21)
+
+
+### Features
+
+* **meta.js:** 将meta信息本地化  ([b197ff0](https://github.com/levy9527/nuxt-element-dashboard/commit/b197ff0))
+
+
+
 ### [2.3.4](https://github.com/levy9527/nuxt-element-dashboard/compare/v2.3.3...v2.3.4) (2019-05-17)
 
 
