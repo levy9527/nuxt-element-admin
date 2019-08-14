@@ -1,0 +1,14 @@
+image: node:10
+pages:
+  cache:
+    paths:
+    - node_modules/
+  script:
+  - yarn
+  - PUBLIC_PATH=https://deepexi.gitlab.io/nuxt-element-dashboard/ API_SERVER=https://easy-mock.com/mock/5c1b3895fe5907404e654045/femessage-mock yarn build
+  - mv dist public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
